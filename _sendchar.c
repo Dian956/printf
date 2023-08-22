@@ -4,7 +4,7 @@
  * @c: input character
  * Return: returns an int upon success
  */
-int _putchar(char c)
+int _sendchar(char c)
 {
   return (write(1, &c, 1));
 }
