@@ -18,7 +18,7 @@ num = -num;
 vdigits = integers_count(num);
 vdivisor = 1;
 
-for (i = 0; i < vdigits; i++)
+for (i = 1; i < vdigits; i++)
 {
 vdivisor *= 10;
 }

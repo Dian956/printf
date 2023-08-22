@@ -7,9 +7,9 @@
 */
 int integers_count(int n)
 {
-int conn;
+int conn = 0;
 
-while (n > 0)
+ while (n != 0)
 {
 n /= 10;
 conn++;

@@ -39,7 +39,7 @@ _sendchar('%');
 g++;
 }
 
-else if (format[g] == '%' && (format[g + 1] == 'd' || format[g + 1] == 'i'))
+else if (format[g] == '%' && (format[g + 1] == 'i' || format[g + 1] == 'd'))
 {
 vnum = va_arg(args, int);
 vcount = integers_count(vnum);
