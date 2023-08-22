@@ -7,15 +7,12 @@
 */
 int _printf(const char *format, ...)
 {
-unsigned int g, vcount, verse = 0;
-int vnum;
+int g, vcount, vnum, verse = 0;
 va_list args;
 
 if (!format || (format[0] == '%' && format[1] == '\0') || format == NULL)
 return (-1);
-
 va_start(args, format);
-
 for (g = 0; format[g] != '\0'; g++)
 {
 if (format[g] != '%')
@@ -38,7 +35,6 @@ else if (format[g] == '%' && format[g + 1] == '%')
 _sendchar('%');
 g++;
 }
-
 else if (format[g] == '%' && (format[g + 1] == 'i' || format[g + 1] == 'd'))
 {
 vnum = va_arg(args, int);
@@ -47,12 +43,8 @@ int_print(vnum);
 g++;
 verse += (vcount - 1);
 }
-
 verse++;
 }
-
 va_end(args);
-
 return (verse);
-
 }
