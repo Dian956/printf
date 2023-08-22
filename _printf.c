@@ -2,7 +2,7 @@
 /**
 * _printf -  produces output according to a format.
 * @format: character string
-* Return: returns the number of characters printed (excluding the null byte used to end output to strings)
+* Return: returns the number of characters printed
 *
 */
 int _printf(const char *format, ...)
@@ -15,7 +15,7 @@ return (-1);
 
 va_start(args, format);
 
-for ( g = 0; format[g] != '\0'; g++)
+for (g = 0; format[g] != '\0'; g++)
 {
 if (format[g] != '%')
 {
