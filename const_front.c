@@ -35,17 +35,17 @@ int _printf(const char *format, ...)
 
 			if (str == NULL)
 			{
-				count += printf("(null)");
+				count += _puts("(null)");
 			}
 			else
 			{
-				count += printf("%s", str);
+				count += _puts(str);
 			}
 			format += 2;
 		}
 		else
 		{
-			putchar(*format);
+			_putchar(*format);
 			count++;
 			format++;
 		}
