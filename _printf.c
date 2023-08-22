@@ -8,6 +8,7 @@
 int _printf(const char *format, ...)
 {
 unsigned int g, vcount, verse = 0;
+int vnum;
 va_list args;
 
 if (!format || (format[0] == '%' && format[1] == '\0') || format == NULL)
@@ -37,6 +38,16 @@ else if (format[g] == '%' && format[g + 1] == '%')
 _sendchar('%');
 g++;
 }
+
+else if (format[g] == '%' && (format[g + 1] == 'd' || format[g + 1] == 'i'))
+{
+vnum = va_arg(args, int);
+vcount = integers_count(vnum);
+int_print(vnum);
+g++;
+verse += (vcount - 1);
+}
+
 verse++;
 }
 

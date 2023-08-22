@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+void int_print(int num);
+int integers_count(int n);
 int _sendchar(char c);
 int _puts(char *c);
 
