@@ -16,6 +16,10 @@ num = -num;
 }
 
 vdigits = integers_count(num);
+
+ if (vdigits == 0)
+   return;
+ 
 vdivisor = 1;
 
 for (i = 1; i < vdigits; i++)
