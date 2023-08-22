@@ -9,8 +9,8 @@ int integers_count(int n)
 {
 int conn = 0;
 
- if (n == 0)
-   return (conn);
+if (n == 0)
+return (1);
 
 while (n != 0)
 {
