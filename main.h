@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <limits.h>
 
+void print_binary(unsigned int num);
 void int_print(int num);
 int integers_count(int n);
 int _sendchar(char c);

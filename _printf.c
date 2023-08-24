@@ -8,6 +8,7 @@
 int _printf(const char *format, ...)
 {
 int g, vcount, vnum, verse = 0;
+unsigned int binary;
 va_list args;
 
 if (!format || (format[0] == '%' && format[1] == '\0') || format == NULL)
@@ -43,6 +44,12 @@ int_print(vnum);
 g++;
 verse += (vcount - 1);
 }
+else if (format[g] == '%' && format[g + 1] == 'b') {
+binary = va_arg(args, unsigned int);
+print_binary(binary);
+g++;
+}
+
 verse++;
 }
 va_end(args);
