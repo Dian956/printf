@@ -21,7 +21,7 @@ i++;
 }
 for (j = i - 1; j >= 0; j--)
 {
-_sendchar('0' + binary_nambas[j]);
+_sendchar(binary_nambas[j] + '0');
 }
 return;
 }
