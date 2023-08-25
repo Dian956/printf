@@ -6,6 +6,9 @@
 #include <unistd.h>
 #include <limits.h>
 
+void print_hex(unsigned int num, int k);
+void print_unsigned(unsigned int num);
+void print_octal(unsigned int num);
 void print_binary(unsigned int num);
 void int_print(int num);
 int integers_count(int n);
