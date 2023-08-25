@@ -28,7 +28,7 @@ else
 num = -num;
 }
 }
-vdigits = integers_count(num);
+ vdigits = integers_count(num, 10);
 if (vdigits == 0)
 return;
 vdivisor = 1;

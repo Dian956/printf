@@ -1,18 +1,18 @@
 #include "main.h"
 /**
 * implement1 -  produces output according to a format.
-* @n: character string
+* @verse: character string
 * @m: input
 * @g: input
 * Return: returns the number of characters printed
 *
 */
-static void implement1(int n, int m, int g, unsigned int bits, char *str)
+static void implement1(int verse, int vcount, int g, unsigned int binary, const char *format, va_list args)
 {
 if (format[g] == '%' && format[g + 1] == 'x')
 {
 binary = va_arg(args, unsigned int);
-vcount = integers_count(binary);
+ vcount = integers_count(binary, 16);
 print_hex(binary, 0);
 g++;
 verse += (vcount - 1);
@@ -20,7 +20,7 @@ verse += (vcount - 1);
 else if (format[g] == '%' && format[g + 1] == 'X')
 {
 binary = va_arg(args, unsigned int);
-vcount = integers_count(binary);
+ vcount = integers_count(binary, 16);
 print_hex(binary, 1);
 g++;
 verse += (vcount - 1);
@@ -28,16 +28,8 @@ verse += (vcount - 1);
 else if (format[g] == '%' && format[g + 1] == 'o')
 {
 binary = va_arg(args, unsigned int);
-vcount = integers_count(binary);
+ vcount = integers_count(binary, 8);
 print_octal(binary);
-g++;
-verse += (vcount - 1);
-}
-else if (format[g] == '%' && format[g + 1] == 'u')
-{
-binary = va_arg(args, unsigned int);
-vcount = integers_count(binary);
-print_unsigned(binary);
 g++;
 verse += (vcount - 1);
 }
@@ -83,7 +75,7 @@ g++;
 else if (format[g] == '%' && (format[g + 1] == 'i' || format[g + 1] == 'd'))
 {
 vnum = va_arg(args, int);
-vcount = integers_count(vnum);
+ vcount = integers_count(vnum, 10);
 int_print(vnum);
 g++;
 verse += (vcount - 1);
@@ -91,12 +83,20 @@ verse += (vcount - 1);
 else if (format[g] == '%' && format[g + 1] == 'b')
 {
 binary = va_arg(args, unsigned int);
-vcount = integers_count(binary);
+ vcount = integers_count(binary, 2);
 print_binary(binary);
 g++;
 verse += (vcount - 1);
 }
-implement1(verse, vcount, g, binary, format)
+ else if (format[g] == '%' && format[g + 1] == 'u')
+{
+binary = va_arg(args, unsigned int);
+ vcount = integers_count(binary, 10);
+print_unsigned(binary);
+g++;
+verse += (vcount - 1);
+}
+ implement1(verse, vcount, g, binary, format, args);
 verse++;
 }
 va_end(args);

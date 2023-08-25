@@ -11,7 +11,7 @@ void print_unsigned(unsigned int num);
 void print_octal(unsigned int num);
 void print_binary(unsigned int num);
 void int_print(int num);
-int integers_count(int n);
+int integers_count(unsigned int n, int ct);
 int _sendchar(char c);
 int _puts(char *c);
 
