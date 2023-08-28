@@ -48,8 +48,8 @@ if (!format || (format[0] == '%' && format[1] == '\0') || format == NULL)
 return (-1);
 va_start(args, format);
 
- binary = va_arg(args, unsigned int);
- 
+binary = va_arg(args, unsigned int);
+
 for (g = 0; format[g] != '\0'; g++)
 {
 if (format[g] != '%')
