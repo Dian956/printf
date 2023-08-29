@@ -12,5 +12,6 @@ void handle_char_spef(char *output_buffer, int *count, int *buffer_index, va_lis
 void handle_int_spef(char *output_buffer, int *count, int *buffer_index, va_list args, const char *ptr);
 void handle_unsignedint(char *output_buffer, int *count, int *buffer_index, va_list args);
 int get_precision(const char *format, int *i, va_list list);
+int is_digit(char c);
 
 #endif 
